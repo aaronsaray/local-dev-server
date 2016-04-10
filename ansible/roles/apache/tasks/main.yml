@@ -1,0 +1,27 @@
+---
+- name: Install Apache
+  apt: name=apache2 state=present
+
+## Very often, "these days" people need this module enabled
+- name: Enable mod_rewrite
+  action: command a2enmod rewrite
+  notify:
+    - restart apache
+
+- name: Remove default virtual host
+  command: a2dissite 000-default
+  notify:
+    - restart apache
+
+- name: Create site doc root
+  file: path=/vagrant/web/{{ server_hostname }}/public state=directory
+
+- name: Copy over site virtual host file
+  template:
+    src=vhost.conf.j2
+    dest=/etc/apache2/sites-available/{{ server_hostname }}.conf
+
+- name: enable the site
+  command: a2ensite {{ server_hostname }}
+  notify:
+    - restart apache

@@ -2,6 +2,19 @@
 
 This repo will help you bootstrap a local development server.  It's pretty swell. 
 
+## What do I get?
+
+I've loaded this machine with the most common tools that I've found that I need for most of my web projects.  You might
+find that you don't use all of them - and that's ok.  Just keep in mind, if you're going to be developing something for
+a production website as well, you really should trim down your development box to be identical to what's going to be
+in production.
+
+So, in here, in no particular order, are the highlights of what you get.
+
+- After you ssh to the box, you're put directly in the `/vagrant` folder and not left in your home directory 
+- Git is installed
+- Apache is installed, default site is removed, your site is added as a vhost, and mod_rewrite is enabled.
+
 ## Installation
 
 Todo.

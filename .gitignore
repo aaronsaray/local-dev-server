@@ -1,3 +1,5 @@
 .idea
 .vagrant
 .bundle
+web/*
+!web/README.md

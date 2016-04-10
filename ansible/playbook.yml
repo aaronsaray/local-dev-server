@@ -2,4 +2,6 @@
 - hosts: all
   sudo: true
   roles:
-    - common
+    - apache
+#    - mysql
+#    - php

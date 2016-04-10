@@ -1,0 +1,12 @@
+<VirtualHost *:80>
+    ServerName {{ server_hostname }}
+    DocumentRoot /vagrant/web/{{ server_hostname }}/public
+
+    <Directory /vagrant/sites/{{ server_hostname }}/public>
+        Require all granted
+        AllowOverride all
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/{{ server_hostname }}-error.log
+    CustomLog ${APACHE_LOG_DIR}/{{ server_hostname }}-access.log combined
+</VirtualHost>
