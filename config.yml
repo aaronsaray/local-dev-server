@@ -8,6 +8,9 @@ private_network_ip: "172.28.150.10"
 ## 2048mb - or 2 gigs RAM is available to the virtual machine
 available_ram_mb: 2048
 
+## enable swap on this machine.  Probably not used unless you have very low RAM available for this
+enable_swap: no
+
 # Extra Items
 
 install_composer: true

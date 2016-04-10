@@ -2,9 +2,11 @@
 - hosts: all
   sudo: true
   roles:
+    - { role: swap, when: enable_swap == true }
     - apache
     - mysql
     - php
     - nodejs
     - php_tools
     - documentation_tools
+

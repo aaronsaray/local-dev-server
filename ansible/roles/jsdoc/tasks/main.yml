@@ -1,5 +1,5 @@
 ---
-- stat: path=/usr/local/bin/jsdoc
+- stat: path=/usr/bin/jsdoc
   register: jsdoc_exists
 
 - name: Install jsdoc

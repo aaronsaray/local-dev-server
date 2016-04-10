@@ -1,5 +1,5 @@
 ---
-- stat: path=/usr/local/bin/apidoc
+- stat: path=/usr/bin/apidoc
   register: apidoc_exists
 
 - name: Install apidoc
