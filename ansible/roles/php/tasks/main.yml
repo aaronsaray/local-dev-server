@@ -37,5 +37,3 @@
   lineinfile: dest=/etc/php5/apache2/php.ini regexp=^session.gc_probability line='session.gc_probability = 1'
   notify:
     - restart apache
-
-- include: composer.yml
