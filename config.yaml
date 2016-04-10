@@ -1,4 +1,9 @@
 ---
+## This is used for the local server name, your hosts file, and the name in the virtual box registry
 hostname: "local.dev"
+
+## Make sure that this IP is not in use on your system currently
 private_network_ip: "172.28.128.90"
+
+## 2048mb - or 2 gigs RAM is available to the virtual machine
 available_ram_mb: 2048
