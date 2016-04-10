@@ -32,7 +32,34 @@ In the `config.yml` file, there are other conditionals that will allow you to cu
 
 ## Installation
 
-Todo.
+There are two ways to use this box.  
+
+### Just for local development
+
+First, clone this to a location you desire.
+
+`git clone git@github.com:aaronsaray/local-dev-server.git`
+
+Then, check out or create your own repo in the `web/public` folder (or you may want to delete the public folder first, and create it later)
+
+`cd web/public && git init`
+
+### Use as part of your project.
+
+You can use this as a basis or launch pad for your own project.  Remember, this is *not recommended* for production boxes. 
+However, if you want to distribute your project with a virtual machine, you can download this an integrate it into your project.
+
+First, clone this to your project directory.
+
+`mkdir my-project && cd my-project && git clone git@github.com:aaronsaray/local-dev-server.git .`
+
+Now, the easiest way to take care of this is to just git rid of my git history and create your own git project to begin with.
+
+`rm -rf .git && git init`
+
+`git add . && git commit -a -m "First commit using github.com/aaronsaray/local-dev-server for a local server."`
+
+Then you may want to add your own remote (yeah you probably want to do this).
 
 ## Configuration
 
