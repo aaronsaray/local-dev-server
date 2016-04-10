@@ -26,8 +26,9 @@ In the `config.yml` file, there are other conditionals that will allow you to cu
 - Composer for managing PHP dependencies is installed (enabled by default)
 - API Doc for documenting APIs (enabled by default)
 - JS Doc for documenting Javascript (enabled by default)
-- WordPress (and wp-cli) (disabled by default)
+- WordPress Latest Version (and wp-cli) (disabled by default)
 - Drupal 8 (and drupal console) (disabled by default)
+- Joomla 3.5 (disabled by default)
 
 ## Installation
 

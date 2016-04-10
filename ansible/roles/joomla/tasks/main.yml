@@ -1,0 +1,22 @@
+---
+- name: Create mysql user for joomla
+  mysql_user: name=joomla password= priv=*.*:ALL state=present login_user=root login_password=
+- name: Setup empty database for Joomla
+  mysql_db:
+    name: "joomla"
+    encoding: "utf8"
+    collation: "utf8_unicode_ci"
+    state: "present"
+    login_user: "joomla"
+    login_password: ""
+
+- name: Create joomla doc root
+  file: path=/vagrant/web/{{ server_hostname }}/public/joomla state=directory
+- stat: path=/vagrant/web/{{ server_hostname }}/public/joomla/index.php
+  register: joomla_exists
+- name: Download Joomla
+  get_url: url=https://github.com/joomla/joomla-cms/releases/download/3.5.1/Joomla_3.5.1-Stable-Full_Package.zip dest=/tmp/joomla.zip
+  when: joomla_exists.stat.exists == False
+- name: Unzip Joomla to location
+  unarchive: src=/tmp/joomla.zip dest=/vagrant/web/{{ server_hostname }}/public/joomla copy=no
+  when: joomla_exists.stat.exists == False

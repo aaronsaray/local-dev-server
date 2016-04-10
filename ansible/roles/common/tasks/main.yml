@@ -5,6 +5,9 @@
 - name: Install git
   apt: name=git state=latest
 
+- name: Install unzip
+  apt: name=unzip state=latest
+
 ## Most of the time when I vagrant ssh in, I want to be in that /vagrant folder anyway - so this just makes it easier
 - name: Create redirect for bash login to /vagrant
   lineinfile: dest=/home/vagrant/.bash_login line="cd /vagrant" state=present create=yes owner=vagrant group=vagrant

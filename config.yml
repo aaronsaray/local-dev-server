@@ -19,3 +19,4 @@ install_jsdoc: true
 install_composer: true
 install_wordpress: false
 install_drupal: false
+install_joomla: false

@@ -2,12 +2,13 @@
 - hosts: all
   sudo: true
   roles:
-#    - { role: swap, when: enable_swap == true }
-#    - apache
-#    - mysql
-#    - php
-#    - nodejs
-#    - php_tools
-#    - documentation_tools
-#    - { role: wordpress, when: install_wordpress == true }
+    - { role: swap, when: enable_swap == true }
+    - apache
+    - mysql
+    - php
+    - nodejs
+    - php_tools
+    - documentation_tools
+    - { role: wordpress, when: install_wordpress == true }
     - { role: drupal, when: install_drupal == true }
+    - { role: joomla, when: install_joomla == true }

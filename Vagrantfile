@@ -58,7 +58,8 @@ Vagrant.configure("2") do |box|
             install_apidoc: config["install_apidoc"],
             install_jsdoc: config["install_jsdoc"],
             install_wordpress: config["install_wordpress"],
-            install_drupal: config["install_drupal"]
+            install_drupal: config["install_drupal"],
+            install_joomla: config["install_joomla"]
         }
     end
 end
