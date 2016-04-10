@@ -57,6 +57,7 @@ It's that easy!  Now you have a nice local dev server.  There was much rejoicing
 
 - Outgoing email using your SMTP authentication
 - XDebug for PHP
+- Install instructions / how to use this to bootstrap your project
 
 ## Contributors
 
