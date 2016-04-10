@@ -19,6 +19,7 @@ location is `/vagrant/web/your-site` with your docroot being `/vagrant/web/your-
 - PHP is installed to the latest version supported by Apt and Ubuntu at time of installation (may not be bleeding edge)
 - PHP modules including imagick, gd, sqlite, curl and more
 - Composer for managing PHP dependencies is installed
+- NodeJS / NPM
 
 ## Installation
 
@@ -41,7 +42,7 @@ for a base box.  You may want to raise or lower this depending on your needs.
 
 ## Usage
 
-` cd directory-of-project && vagrant up`
+`cd directory-of-project && vagrant up`
 
 It's that easy!  Now you have a nice local dev server.  There was much rejoicing.
 

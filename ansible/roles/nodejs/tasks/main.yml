@@ -1,0 +1,12 @@
+---
+- name: Check if NodeJS is installed
+  command: dpkg-query -l nodejs
+  ignore_errors: yes
+  register: deb_check_nodejs
+
+- name: Install nodejs deb source
+  shell: curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+  when: deb_check_nodejs.stderr.find('no packages found') != -1
+
+- name: Install nodejs
+  apt: name=nodejs state=present
