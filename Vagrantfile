@@ -17,7 +17,7 @@ end
 require 'yaml'
 
 ## Load configuration file
-config = YAML.load_file('config.yaml')
+config = YAML.load_file('config.yml')
 
 ## Main init
 Vagrant.configure("2") do |box|
@@ -27,10 +27,10 @@ Vagrant.configure("2") do |box|
     box.vm.network "private_network", ip: config["private_network_ip"]
 
     ## the purpose of this is only local dev, so you can stay "bleeding edge"
-    box.vm.box = "ubuntu/precise64"
+    box.vm.box = "ubuntu/trusty64"  ## ubuntu/precise64
 
     ## sync up shared folder owned by vagrant, group of www-data, and changing permission to 775 persistently
-    box.vm.synced_folder ".", "/vagrant", owner: "vagrant", group: "www-data", mount_options: ["dmode=775,fmode=775"]
+    box.vm.synced_folder ".", "/vagrant", owner: "vagrant", group: "www-data", mount_options: ["dmode=775,fmode=664"]
 
     ## Use virtualbox as the provider
     box.vm.provider :virtualbox do |vb|
@@ -41,5 +41,18 @@ Vagrant.configure("2") do |box|
         ## MB of memory
         vb.memory = config["available_ram_mb"]
         vb.name = config["hostname"]
+    end
+
+    ## Provision with Ansible
+    box.vm.provision "ansible" do |ansible|
+        ansible.playbook = "ansible/playbook.yml"
+
+        ## only "ok" for local dev boxes
+        ansible.host_key_checking = false
+
+        ## pass the server name into ansible
+        ansible.extra_vars = {
+            server_hostname: config["hostname"]
+        }
     end
 end
