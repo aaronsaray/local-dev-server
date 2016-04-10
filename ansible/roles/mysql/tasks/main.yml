@@ -4,3 +4,6 @@
 
 - name: Install MySQL Server
   apt: name=mysql-server state=latest
+
+- name: Install MySQL Python Tools
+  apt: name=python-mysqldb state=latest

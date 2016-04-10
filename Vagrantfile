@@ -56,7 +56,9 @@ Vagrant.configure("2") do |box|
             enable_swap: config["enable_swap"],
             install_composer: config["install_composer"],
             install_apidoc: config["install_apidoc"],
-            install_jsdoc: config["install_jsdoc"]
+            install_jsdoc: config["install_jsdoc"],
+            install_wordpress: config["install_wordpress"],
+            install_drupal: config["install_drupal"]
         }
     end
 end

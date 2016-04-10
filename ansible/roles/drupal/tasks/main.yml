@@ -1,0 +1,27 @@
+---
+- name: Create mysql user for drupal
+  mysql_user: name=drupal password= priv=*.*:ALL state=present login_user=root login_password=
+
+- stat: path=/usr/local/bin/drupal
+  register: drupal_console
+- name: Install Drupal Console
+  command: curl https://drupalconsole.com/installer -L -o drupal.phar
+  when: drupal_console.stat.exists == false
+- name: Move drupal console to /usr/local/bin
+  command: mv drupal.phar /usr/local/bin/drupal
+  when: drupal_console.stat.exists == false
+- name: Make drupal executable
+  command: chmod +x /usr/local/bin/drupal
+  when: drupal_console.stat.exists == false
+- name: Drupal config settings
+  command: drupal init
+  sudo: no
+  when: drupal_console.stat.exists == false
+
+- name: Create drupal doc root
+  file: path=/vagrant/web/{{ server_hostname }}/public/drupal state=directory
+- stat: path=/vagrant/web/{{ server_hostname }}/public/drupal/index.php
+  register: drupal_exists
+- name: Download Drupal
+  command: drupal site:new drupal 8.0.3 chdir=/vagrant/web/{{ server_hostname }}/public
+  when: drupal_exists.stat.exists == false

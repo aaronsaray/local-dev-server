@@ -16,3 +16,6 @@ enable_swap: no
 install_composer: true
 install_apidoc: true
 install_jsdoc: true
+install_composer: true
+install_wordpress: false
+install_drupal: false

@@ -1,0 +1,36 @@
+---
+- name: Create mysql user for wordpress
+  mysql_user: name=wp password= priv=*.*:ALL state=present login_user=root login_password=
+- name: Setup empty database for WordPress
+  mysql_db:
+    name: "wordpress"
+    encoding: "utf8"
+    collation: "utf8_unicode_ci"
+    state: "present"
+    login_user: "wp"
+    login_password: ""
+
+- stat: path=/usr/local/bin/wp
+  register: wpcli_install
+- name: Download wp-cli
+  get_url: url=https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar dest=/tmp/php-wpcli.phar
+  when: wpcli_install.stat.exists == False
+- name: Install wp-cli
+  command: mv /tmp/php-wpcli.phar /usr/local/bin/wp
+  when: wpcli_install.stat.exists == False
+- name: Make wp-cli executable
+  command: chmod +x /usr/local/bin/wp
+  when: wpcli_install.stat.exists == False
+- name: Check wp cli update
+  command: wp cli update --allow-root
+
+- name: Create wordpress doc root
+  file: path=/vagrant/web/{{ server_hostname }}/public/wordpress state=directory
+- stat: path=/vagrant/web/{{ server_hostname }}/public/wordpress/wp-includes
+  register: wordpress_exists
+- name: Download Wordpress
+  get_url: url=https://wordpress.org/latest.tar.gz dest=/tmp/wordpress.tar.gz
+  when: wordpress_exists.stat.exists == False
+- name: Unzip Wordpress to location
+  command: tar -xvf /tmp/wordpress.tar.gz -C /vagrant/web/{{ server_hostname }}/public/wordpress --strip 1
+  when: wordpress_exists.stat.exists == False

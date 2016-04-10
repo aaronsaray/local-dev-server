@@ -18,8 +18,16 @@ location is `/vagrant/web/your-site` with your docroot being `/vagrant/web/your-
 - MySQL is installed, root password is still blank - this installation is pretty insecure
 - PHP is installed to the latest version supported by Apt and Ubuntu at time of installation (may not be bleeding edge)
 - PHP modules including imagick, gd, sqlite, curl and more
-- Composer for managing PHP dependencies is installed
 - NodeJS / NPM
+
+In the `config.yml` file, there are other conditionals that will allow you to customize the following items:
+
+- Swap file for Ubuntu (disabled by default)
+- Composer for managing PHP dependencies is installed (enabled by default)
+- API Doc for documenting APIs (enabled by default)
+- JS Doc for documenting Javascript (enabled by default)
+- WordPress (and wp-cli) (disabled by default)
+- Drupal 8 (and drupal console) (disabled by default)
 
 ## Installation
 
@@ -30,14 +38,14 @@ Todo.
 To make the configuration of this local dev server easier, all configuration options have been included in a YAML
 file in the root of this project.  There you'll find the following configuration options (with comments - of course!)
 
-**hostname** This is the host name for your virtual machine.  It is also added to your /etc/hosts file.  Finally, this
+`hostname` This is the host name for your virtual machine.  It is also added to your /etc/hosts file.  Finally, this
 is also used in the VirtualBox registry (which isn't really that exciting until you were to look at something like the 
 VirtualBox GUI and see very nicely labeled vagrant boxes - wow!)
 
-**private_network_ip** Currently this box only allows a NAT + private network configuration.  Here you must specify 
+`private_network_ip` Currently this box only allows a NAT + private network configuration.  Here you must specify 
 an IP address that is private and available.  This is used when the hosts file is edited as well.
 
-**available_ram_mb** This is the RAM amount that is specified for the VirtualBox virtual machine.  I've picked 2G of RAM
+`available_ram_mb` This is the RAM amount that is specified for the VirtualBox virtual machine.  I've picked 2G of RAM
 for a base box.  You may want to raise or lower this depending on your needs.
 
 ## Usage
