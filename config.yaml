@@ -1,0 +1,4 @@
+---
+hostname: "local.dev"
+private_network_ip: "172.28.128.90"
+available_ram_mb: 2048
