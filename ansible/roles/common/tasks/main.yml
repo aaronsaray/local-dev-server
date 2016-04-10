@@ -3,7 +3,7 @@
   apt: update_cache=yes cache_valid_time=3600  ## once an hour
 
 - name: Install git
-  apt: name=git state=present
+  apt: name=git state=latest
 
 ## Most of the time when I vagrant ssh in, I want to be in that /vagrant folder anyway - so this just makes it easier
 - name: Create redirect for bash login to /vagrant

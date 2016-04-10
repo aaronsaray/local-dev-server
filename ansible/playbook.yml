@@ -3,5 +3,5 @@
   sudo: true
   roles:
     - apache
-#    - mysql
-#    - php
+    - mysql
+    - php

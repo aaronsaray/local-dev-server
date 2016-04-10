@@ -2,7 +2,7 @@
     ServerName {{ server_hostname }}
     DocumentRoot /vagrant/web/{{ server_hostname }}/public
 
-    <Directory /vagrant/sites/{{ server_hostname }}/public>
+    <Directory /vagrant/web/{{ server_hostname }}/public>
         Require all granted
         AllowOverride all
     </Directory>

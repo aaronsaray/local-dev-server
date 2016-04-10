@@ -1,6 +1,6 @@
 ---
 - name: Install Apache
-  apt: name=apache2 state=present
+  apt: name=apache2 state=latest
 
 ## Very often, "these days" people need this module enabled
 - name: Enable mod_rewrite

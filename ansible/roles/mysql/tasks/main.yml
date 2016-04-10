@@ -1,0 +1,6 @@
+---
+- name: Install MySQL client
+  apt: name=mysql-client state=latest
+
+- name: Install MySQL Server
+  apt: name=mysql-server state=latest

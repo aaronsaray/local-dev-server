@@ -30,7 +30,7 @@ Vagrant.configure("2") do |box|
     box.vm.box = "ubuntu/trusty64"  ## ubuntu/precise64
 
     ## sync up shared folder owned by vagrant, group of www-data, and changing permission to 775 persistently
-    box.vm.synced_folder ".", "/vagrant", owner: "vagrant", group: "www-data", mount_options: ["dmode=775,fmode=664"]
+    box.vm.synced_folder ".", "/vagrant", owner: "www-data", group: "www-data", mount_options: ["dmode=775,fmode=664"]
 
     ## Use virtualbox as the provider
     box.vm.provider :virtualbox do |vb|
