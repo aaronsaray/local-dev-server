@@ -1,0 +1,7 @@
+---
+- stat: path=/usr/local/bin/jsdoc
+  register: jsdoc_exists
+
+- name: Install jsdoc
+  shell: npm install jsdoc -g
+  when: jsdoc_exists.stat.exists == False

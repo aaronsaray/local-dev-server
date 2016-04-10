@@ -52,7 +52,10 @@ Vagrant.configure("2") do |box|
 
         ## pass the server name into ansible
         ansible.extra_vars = {
-            server_hostname: config["hostname"]
+            server_hostname: config["hostname"],
+            install_composer: config["install_composer"],
+            install_apidoc: config["install_apidoc"],
+            install_jsdoc: config["install_jsdoc"]
         }
     end
 end

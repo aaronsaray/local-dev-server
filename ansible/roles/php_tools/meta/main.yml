@@ -1,4 +1,4 @@
 ---
 dependencies:
   - { role: php }
-  - { role: composer }
+  - { role: composer, when: install_composer == true }

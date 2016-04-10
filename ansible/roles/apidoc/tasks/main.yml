@@ -1,0 +1,7 @@
+---
+- stat: path=/usr/local/bin/apidoc
+  register: apidoc_exists
+
+- name: Install apidoc
+  shell: npm install apidoc -g
+  when: apidoc_exists.stat.exists == False

@@ -7,3 +7,9 @@ private_network_ip: "172.28.150.10"
 
 ## 2048mb - or 2 gigs RAM is available to the virtual machine
 available_ram_mb: 2048
+
+# Extra Items
+
+install_composer: true
+install_apidoc: true
+install_jsdoc: true

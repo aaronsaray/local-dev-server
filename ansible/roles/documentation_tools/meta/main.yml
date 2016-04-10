@@ -1,0 +1,4 @@
+---
+dependencies:
+  - { role: apidoc, when: install_apidoc == true }
+  - { role: jsdoc, when: install_jsdoc == true }
