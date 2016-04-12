@@ -3,6 +3,7 @@
   sudo: true
   roles:
     - { role: swap, when: enable_swap == true }
+    - { role: outgoing-mail, when: enable_outgoing_mail == true }
     - apache
     - mysql
     - php

@@ -76,6 +76,28 @@ an IP address that is private and available.  This is used when the hosts file i
 `available_ram_mb` This is the RAM amount that is specified for the VirtualBox virtual machine.  I've picked 2G of RAM
 for a base box.  You may want to raise or lower this depending on your needs.
 
+`enable_swap` If you are running low on RAM you might need to enable your swap on this device.  Try not to use this if you
+can help it.
+
+`enable_outgoing_mail` This will allow outgoing email to be relayed using your SMTP server.  You might use the SMTP server
+you have through your web hosting account, or something like GMail.  (If you use gmail, you may need to turn on the ability
+to allow access from less secure apps as Google is cracking down on plain username/password authentication.)
+
+`outgoing_mail_smtp_server`, `outgoing_mail_smtp_port`, `outgoing_mail_user` and `outgoing_mail_pass` are used to configure
+SMTP relay host forwarding.  Remember, *do not* use your primary email here.  Use a special SMTP user/service for this.
+
+`install_composer` Installs [Composer](http://getcomposer.org) globally.
+
+`install_apidoc` Installs [API Doc](http://apidocjs.com/) globally.
+
+`install_jsdoc` Installs [JS Doc](https://github.com/jsdoc3/jsdoc) globally.
+
+`install_wordpress` Installs [WordPress](https://wordpress.org) in web/your-domain.com/public/wordpress
+
+`install_drupal` Installs [Drupal](https://www.drupal.org/) in web/your-domain.com/public/drupal
+
+`install_joomla` Installs [Joomla](https://www.joomla.org/) in web/your-domain.com/public/joomla
+
 ## Usage
 
 `cd directory-of-project && vagrant up`
@@ -91,7 +113,6 @@ It's that easy!  Now you have a nice local dev server.  There was much rejoicing
 
 ## Todo
 
-- Outgoing email using your SMTP authentication
 - XDebug for PHP
 
 ## Contributors

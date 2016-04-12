@@ -9,14 +9,22 @@ private_network_ip: "172.28.150.10"
 available_ram_mb: 2048
 
 ## enable swap on this machine.  Probably not used unless you have very low RAM available for this
-enable_swap: no
+enable_swap: false
+
+## allow outogoing email - this has dependencies below
+enable_outgoing_mail: true
+
+## if outgoing mail is on, these are used.  Do not use your primary email here!!
+outgoing_mail_smtp_server: smtp.gmail.com
+outgoing_mail_smtp_port: 587
+outgoing_mail_user: my-user@gmail.com
+outgoing_mail_pass: my-complex-password
 
 # Extra Items
 
 install_composer: true
 install_apidoc: true
 install_jsdoc: true
-install_composer: true
 install_wordpress: false
 install_drupal: false
 install_joomla: false

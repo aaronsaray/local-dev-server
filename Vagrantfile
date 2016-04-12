@@ -54,6 +54,11 @@ Vagrant.configure("2") do |box|
         ansible.extra_vars = {
             server_hostname: config["hostname"],
             enable_swap: config["enable_swap"],
+            enable_outgoing_mail: config["enable_outgoing_mail"],
+            outgoing_mail_smtp_server: config["outgoing_mail_smtp_server"],
+            outgoing_mail_smtp_port: config["outgoing_mail_smtp_port"],
+            outgoing_mail_user: config["outgoing_mail_user"],
+            outgoing_mail_pass: config["outgoing_mail_pass"],
             install_composer: config["install_composer"],
             install_apidoc: config["install_apidoc"],
             install_jsdoc: config["install_jsdoc"],
