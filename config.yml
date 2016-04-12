@@ -12,7 +12,7 @@ available_ram_mb: 2048
 enable_swap: false
 
 ## allow outogoing email - this has dependencies below
-enable_outgoing_mail: true
+enable_outgoing_mail: false
 
 ## if outgoing mail is on, these are used.  Do not use your primary email here!!
 outgoing_mail_smtp_server: smtp.gmail.com

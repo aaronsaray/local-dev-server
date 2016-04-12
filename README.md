@@ -24,7 +24,9 @@ location is `/vagrant/web/your-site` with your docroot being `/vagrant/web/your-
 In the `config.yml` file, there are other conditionals that will allow you to customize the following items:
 
 - Swap file for Ubuntu (disabled by default)
+- Outgoing mail (disabled by default) using SMTP relay host
 - Composer for managing PHP dependencies is installed (enabled by default)
+- Phing for managing deployments and builds (enabled by default)
 - API Doc for documenting APIs (enabled by default)
 - JS Doc for documenting Javascript (enabled by default)
 - WordPress Latest Version (and wp-cli) (disabled by default)
