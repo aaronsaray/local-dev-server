@@ -1,0 +1,15 @@
+---
+- stat: path=/usr/local/bin/phing
+  register: phing_exists
+
+- name: Install phing
+  shell: curl -O http://www.phing.info/get/phing-latest.phar
+  when: phing_exists.stat.exists == false
+
+- name: Rename phing-latest.phar to phing by moving
+  shell: mv phing-latest.phar /usr/local/bin/phing
+  when: phing_exists.stat.exists == false
+
+- name: Make phing executable
+  file: path=/usr/local/bin/phing mode=a+x state=file
+  when: phing_exists.stat.exists == false

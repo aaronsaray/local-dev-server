@@ -18,6 +18,7 @@ location is `/vagrant/web/your-site` with your docroot being `/vagrant/web/your-
 - MySQL is installed, root password is still blank - this installation is pretty insecure
 - PHP is installed to the latest version supported by Apt and Ubuntu at time of installation (may not be bleeding edge)
 - PHP modules including imagick, gd, sqlite, curl and more
+- XDebug is available and loaded with an idekey of "vagrant"
 - NodeJS / NPM
 
 In the `config.yml` file, there are other conditionals that will allow you to customize the following items:
@@ -88,6 +89,8 @@ SMTP relay host forwarding.  Remember, *do not* use your primary email here.  Us
 
 `install_composer` Installs [Composer](http://getcomposer.org) globally.
 
+`install_phing` Installs [Phing](https://www.phing.info/) globally.
+
 `install_apidoc` Installs [API Doc](http://apidocjs.com/) globally.
 
 `install_jsdoc` Installs [JS Doc](https://github.com/jsdoc3/jsdoc) globally.
@@ -110,10 +113,6 @@ It's that easy!  Now you have a nice local dev server.  There was much rejoicing
 - vagrant-hostsupdater vagrant plugin
 - VirtualBox 4.x+
 - Ansible 1.9+
-
-## Todo
-
-- XDebug for PHP
 
 ## Contributors
 

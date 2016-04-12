@@ -2,3 +2,4 @@
 dependencies:
   - { role: php }
   - { role: composer, when: install_composer == true }
+  - { role: phing, when: install_phing == true }

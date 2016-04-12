@@ -60,6 +60,7 @@ Vagrant.configure("2") do |box|
             outgoing_mail_user: config["outgoing_mail_user"],
             outgoing_mail_pass: config["outgoing_mail_pass"],
             install_composer: config["install_composer"],
+            install_phing: config["install_phing"],
             install_apidoc: config["install_apidoc"],
             install_jsdoc: config["install_jsdoc"],
             install_wordpress: config["install_wordpress"],

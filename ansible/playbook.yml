@@ -8,8 +8,8 @@
     - mysql
     - php
     - nodejs
-    - php_tools
-    - documentation_tools
+    - php-tools
+    - documentation-tools
     - { role: wordpress, when: install_wordpress == true }
     - { role: drupal, when: install_drupal == true }
     - { role: joomla, when: install_joomla == true }

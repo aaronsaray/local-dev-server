@@ -23,6 +23,7 @@ outgoing_mail_pass: my-complex-password
 # Extra Items
 
 install_composer: true
+install_phing: true
 install_apidoc: true
 install_jsdoc: true
 install_wordpress: false
